@@ -3,10 +3,15 @@ name: Testing workflow
 on: [push]
 
 jobs:
-  cypress-run:
+  install:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v3
+        with:
+          browser: chrome
+          build: yarn build
+          start: yarn start
