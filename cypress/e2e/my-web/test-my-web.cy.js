@@ -53,7 +53,7 @@ describe("home page", () => {
   });
 
   context("contact form", () => {
-    it.only("find and write the name, email, message and send", () => {
+    it("find and write the name, email, message and send", () => {
       cy.get(".navbar a").eq(4).click();
       cy.get("input[id='name']").type("Karel");
       cy.get("input[id='email']").type("Karel@tester.xD");
